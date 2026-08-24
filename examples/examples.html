@@ -1,0 +1,60 @@
+<html>
+
+<head>
+	<link href="examples.css" rel="stylesheet" type="text/css">
+	<script src="main.js"></script>
+	<title>My Website</title>
+</head>
+
+<body>
+	<div>
+		<label>Enter your name here!!</label>
+		<input id="name" />
+	</div>
+	<div>
+		<label>Number of greetings:</label>
+		<input id="count" type="number" />
+	</div>
+	<div>
+		<label>Favorite Color:</label>
+		<select id="color">
+			<option value="green">Green</option>
+			<option value="Red">Red</option>
+			<option value="Purple">Purple</option>
+		</select>
+	</div>
+	<button onclick="onSubmit()">Submit</button><br />
+	<div id="greetings">
+
+	</div>
+
+	<hr>
+	<label for="cbDog">Checkbox: Hide Dog</label>
+	<input type="checkbox" onchange="toggleDog()" id="cbDog" /><br />
+
+	<hr>
+	<label>Image:</label><br />
+	<img id="dogPic" src="dog.jpg" />
+
+
+	<hr>
+	<label>Text Area:</label>
+	<br /><textarea></textarea><br />
+
+	<hr>
+	<label>Link:</label>
+	<a href="contacts.html">Contact Info</a>
+
+	<hr>
+	<button onclick="promptMe()">Prompt and Alert</button>
+
+	<hr>
+	<label>List</label>
+	<ol>
+		<li>Apples</li>
+		<li>Oranges</li>
+		<li>Bananas</li>
+	</ol>
+</body>
+
+</html>
