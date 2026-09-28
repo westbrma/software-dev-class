@@ -1,4 +1,5 @@
 // variables: store data to memory so you can refer to it later
+// variables createing using let or const then a name then assigned a value using
 let some_var = 'hello';
 
 // const varibles cannot be changes const = constant

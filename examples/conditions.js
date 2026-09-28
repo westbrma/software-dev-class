@@ -5,11 +5,13 @@ if ('tesing'.includes('ing')) {
 	alert('this word has "ing" in it');
 }
 
-// equality test: ==, <=, >=, >, <
 let some_number = parseInt(prompt('Enter a number'));
 
 // if, else if, else
-if (some_number < 10) {
+// equality operators: ==, <=, >=, >, <
+if (some_number == 10) {
+	alert('your number is 10');
+} else if (some_number < 10) {
 	alert('your number is less then 10');
 } else if (some_number > 10) {
 	alert('your number is greater than 10');
@@ -31,4 +33,14 @@ switch (some_number) {
 		break;
 	default:
 		alert('Your number is not 1,2,3 or 4');
+}
+
+// you can NOT a condition to make it equal true
+if (some_number != 10) {
+	alert('Your number is not 10');
+}
+
+let is_big_number = some_number > 10;
+if (!is_big_number) {
+	alert('this is not a big number');
 }
