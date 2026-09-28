@@ -9,7 +9,7 @@ const netlify = `<!-- This site is hosted on Netlify. Anyone can build and deplo
      Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->`;
 
 function escapeHTML(rawString) {
-	rawString.replace(netlify, '');
+	rawString = rawString.replace(netlify, '');
 	const div = document.createElement('div');
 	div.textContent = rawString;
 	return div.innerHTML;
