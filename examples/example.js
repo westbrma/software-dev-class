@@ -58,9 +58,9 @@ Promise.all([
 	load_file('conditions.js', 'Conditions', 'javascript'),
 	load_file('loops.js', 'loops', 'javascript'),
 	load_file('functions.js', 'Functions', 'javascript'),
-	load_file('lists.js', 'Lists (array)', 'javascript', true),
-	load_file('strings.js', 'strings (text)', 'javascript', true),
-	load_file('objects.js', 'Objects', 'javascript', true),
+	load_file('lists.js', 'Lists (array)', 'javascript'),
+	load_file('strings.js', 'strings (text)', 'javascript'),
+	// load_file('objects.js', 'Objects', 'javascript', true),
 	load_file('elements.js', 'Elements in JS', 'javascript'),
 	load_file('math.js', 'Math', 'javascript')
 ]).then(() => {

@@ -7,7 +7,7 @@
 
 
 <!-- create an input, users can type into this box, values can be retrieve or set in scripts -->
-<input id="input_name" placeholder="What is your name?" />
+<input id="input_name" placeholder="What is your name?" onkeypress="if(event.key === 'Enter') do_something()" />
 
 <!-- multiline input element -->
 <textarea cols="5">
@@ -36,6 +36,8 @@
 <a href="#section_abc">Section Abc</a>
 <!-- link to local page -->
 <a href="/page2.html">Page 2</a>
+
+<a onclick="do_something()">Click Me!</a>
 
 
 <!-- containers -->

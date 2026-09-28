@@ -16,22 +16,20 @@ let some_string = 'hello';
 // concat string with other string or number variables
 some_string += ' world ' + 123;
 
-// arrays are varibles that contain a list of values (strings, numbers, objects)
-const fruit_list = ['apples', 'oranges', 'pears'];
+// variable of a list (see lists section)
+const list = ['Apple', 'Orange', 'Pear'];
 
-// you can access a certain item in a list by index, lists start with index 0
-const oranges = fruit_list[1];
+// objects are very cool, they can combine a set of variables and functions into a single variable
+// variable of an object
+const some_person = {
+	name: 'Mark',
+	favorite_color: 'blue',
+	car: 'Honda',
+	greet: () => alert(`Hello ${this.name}!`)
+};
 
-// list varibles and be added to
-fruit_list.push('plums');
-
-// loops let you do something for each item in a list or while a condition is true
-for (let fruit of fruit_list) {
-	alert(fruit);
-}
-
-// do something while condition is true
-while (fruit_list.length > 0) {
-	// splice lets you remove items in a list by index
-	fruit_list.splice(0, 1);
-}
+// variables inside an object called "properties"
+// even elements are objects with properties and functions
+document.getElementById('#some_element_id');
+document.body.style.background = 'Orange';
+document.addEventListener('DOMContentLoaded', () => alert('DOM is ready!'));
