@@ -6,10 +6,34 @@
 </head>
 
 <body>
-	<h1 style="color:red">Hangman</h1>
-	<button id="bt_start" onclick="list_my_fruit()">Start</button>
-	<input id="new_fruit_input" />
-	<button onclick="add_fruit()">Add Fruit</button>
+	<div>
+		<h1 style="color:royalblue; margin: 0;">Hangman</h1>
+		<pre>=====
+ |  |
+ O  |
+/|\ |
+/ \ |
+=====</pre>
+		<button id="bt_start" onclick="start()">Start/Restart</button>
+	</div>
+
+	<br />
+	<div>
+		<label>Guess this word or phrase:</label>
+		<label id="word" style="color: green;">--A--B ---</label>
+	</div>
+
+
+	<br />
+	<label>Enter a letter:</label>
+	<input id="guess" onkeypress="if(event.key === 'Enter') make_guess()" />
+	<button onclick="make_guess()">Guess</button>
+	<br />
+	<label>Your Guesses: <span id="guesses" style="color: blue;">A, B, C</span></label>
+	<br />
+	<label>Lives Remaining: <span style="color:red" id="lives">5</span></label>
+	<br>
+	<label style="color:magenta" id="game_over">You Win!</label>
 </body>
 
 </html>
