@@ -1,5 +1,27 @@
+/*
+[selector] { 
+	[property]: [value]
+}
+*/
+
 h1 {
 	color: blue;
+	background-color: aqua;
+}
+
+.some_class {
+	color: red;
+}
+
+#some_id {
+	color: green;
+}
+
+/* NESTING */
+.some_class {
+	h1 {
+		color: yellow;
+	}
 }
 
 h1:hover {

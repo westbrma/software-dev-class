@@ -24,7 +24,7 @@ async function load_file(file, title, lang, coming_soon) {
 	root.appendChild(div);
 
 	if (coming_soon) {
-		div.innerHTML = `<h3 id="${title}">${title} (coming soon!)</h3>`;
+		div.innerHTML = `<h3 id="${title}">${title}</h3><div>coming soon!</div>`;
 	} else {
 		let code = await fetch(file).then((r) => r.text());
 		if (lang === 'html') {
@@ -40,11 +40,13 @@ async function load_file(file, title, lang, coming_soon) {
 Promise.all([
 	load_file('basics.html', 'Create HTML file', 'html'),
 	load_file('elements.html', 'Basic Elements', 'html'),
-	load_file('styles.css', 'Styles (css files)', 'css'),
-	load_file('html_events', 'HTML Events', 'html', true),
+	load_file('styles.css', 'Styles (css)', 'css'),
+	load_file('layouts.css', 'Layout (html/css)', 'css', true),
+	load_file('html_events', 'Element Events', 'html', true),
 	load_file('variables.js', 'Variables', 'javascript'),
-	load_file('variables.js', 'Conditions', 'javascript', true),
-	load_file('variables.js', 'Functions', 'javascript', true),
+	load_file('conditions.js', 'Conditions', 'javascript', true),
+	load_file('loops.js', 'loops', 'javascript'),
+	load_file('functions.js', 'Functions', 'javascript'),
 	load_file('lists.js', 'Lists (array)', 'javascript', true),
 	load_file('strings.js', 'strings (text)', 'javascript', true),
 	load_file('objects.js', 'Objects', 'javascript', true),
