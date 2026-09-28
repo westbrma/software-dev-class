@@ -61,7 +61,7 @@ function update_elements() {
 	let all_correct = true;
 	let word_text = '';
 	for (let c of state.word) {
-		let was_guessed = c == ' ' || state.guesses.includes(c);
+		let was_guessed = c == ' ' || state.guesses.includes(c.toLowerCase());
 		word_text += was_guessed ? c : '-';
 		if (!was_guessed) {
 			all_correct = false;
