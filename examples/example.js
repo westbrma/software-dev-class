@@ -1,6 +1,7 @@
 async function load_file(file, title, lang = 'html') {
+	let root = document.getElementById('highlights');
 	let div = document.createElement('div');
-	document.body.appendChild(div);
+	root.appendChild(div);
 
 	let code = await fetch(file).then((r) => r.text());
 	if (lang === 'html') {
@@ -13,5 +14,6 @@ async function load_file(file, title, lang = 'html') {
 	hljs.highlightAll();
 }
 
-load_file('button.html', 'For Loop!', 'html');
+load_file('basics.html', 'Create a html file', 'html');
+load_file('elements.html', 'Basic Elements', 'html');
 load_file('for_loop.js', 'For Loop!', 'javascript');
