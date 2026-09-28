@@ -4,7 +4,12 @@ function createElementFromString(htmlString) {
 	return template.content.firstElementChild; // Returns a true DOM element
 }
 
+const netlify = `<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=b7489b61-cb51-4df8-9f2a-1eb99e4b7ffa
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->`;
+
 function escapeHTML(rawString) {
+	rawString.replace(netlify, '');
 	const div = document.createElement('div');
 	div.textContent = rawString;
 	return div.innerHTML;
