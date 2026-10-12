@@ -40,3 +40,29 @@ let random_fruit = get_random_item(fruit);
 
 // arrays hav many functions
 alert(fruit.join(', ')); // Apple, Orange, Pear
+
+// see if an item is in a list
+let apple_is_in_the_list = fruit.includes('Apple');
+
+// create a new list by adding a list to existing list
+let new_list_with_more_items = fruit.concat(['banana', 'pear']);
+
+// check if every item in a list meets a condition
+let all_items_start_with_a = fruit.every((i) => i.startsWith('A'));
+
+// create a new list of items that meet a condition
+let new_list = fruit.filter((i) => i.startsWith('A'));
+
+// do something for each item in a list
+fruit.forEach((i) => alert(i));
+
+//- map()
+
+// see if one or more items in a list meet a condition
+let some_items_include_a = fruit.some((i) => i.includes('a'));
+
+// remove items in a list by index
+fruit.splice(0, 1);
+
+// sort a list
+fruit.sort();
