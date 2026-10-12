@@ -33,7 +33,7 @@ list.splice(index, 1);
 
 // return a random item in a list
 function get_random_item(list) {
-	state.word = list[Math.floor(Math.random() * list.length)];
+	return list[Math.floor(Math.random() * list.length)];
 }
 
 let random_fruit = get_random_item(fruit);
