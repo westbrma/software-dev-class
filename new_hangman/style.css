@@ -1,0 +1,46 @@
+h1 {
+	color: blue;
+}
+
+h1:hover {
+	color: red;
+}
+
+img {
+	width: 200px;
+	border-radius: 10%;
+	border: 10px solid hotpink;
+}
+
+img:hover {
+	filter: sepia(50%);
+}
+
+body {
+	margin: 0;
+	font-family: cursive;
+	font-size: 24px;
+	padding: 20px;
+	background-color: khaki;
+}
+
+label {
+	display: block;
+}
+
+button {
+	font-family: cursive;
+	font-size: 20px;
+	border: 2px solid black;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input {
+	padding: 10px;
+	font-size: 20px;
+	background-color: lightblue;
+	border: 2px solid black;
+	border-radius: 5px;
+	color: green;
+}
