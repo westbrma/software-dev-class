@@ -61,6 +61,7 @@ function make_guess() {
 	let el_lives = document.getElementById('lives');
 	let el_game_over = document.getElementById('game_over');
 
+	// check to see if the guess is a letter in the word
 	let is_correct = correct_word.includes(guess);
 	if (!is_correct) {
 		lives = lives - 1;
@@ -72,13 +73,22 @@ function make_guess() {
 		}
 	}
 
+	check_if_won();
+	update_word_element();
+}
+
+function check_if_won() {
+	let el_game_over = document.getElementById('game_over');
+	// check to see if they have won
 	let all_correct = true;
 	for (let c of correct_word) {
 		if (c == ' ') continue;
-		if (guesses.includes(c) == false) {
+		if (!guesses.includes(c)) {
 			all_correct = false;
 		}
 	}
-
-	update_word_element();
+	if (all_correct) {
+		game_over = true;
+		el_game_over.innerText = 'You Win!';
+	}
 }
