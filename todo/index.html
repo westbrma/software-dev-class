@@ -1,0 +1,59 @@
+<html>
+
+<head>
+	<script defer src="logic.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<title>TODO List</title>
+</head>
+
+<body>
+	<div id="taskbox" hidden="true">
+		<label>Task Name</label>
+		<input id="task_name" />
+		<label>Due Date</label>
+		<input type="date" id="task_date" />
+		<label>Status</label>
+		<select id="task_status">
+			<option>Critical</option>
+			<option>Ready</option>
+			<option>Done</option>
+		</select>
+		<div style="text-align: right; margin-top: 12px;">
+			<button class="danger" onclick="delete_task()">Delete</button>
+			<button onclick="close_task()">Done</button>
+		</div>
+	</div>
+
+	<div>
+		<h1 style="color:royalblue;">My Task List</h1>
+		<div>
+			<button>New Task</button>
+		</div>
+		<br />
+		<table>
+			<thead>
+				<tr>
+					<th>Task Name</th>
+					<th>Due Date</th>
+					<th>Status</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody id="task_tbody">
+				<tr>
+					<td onclick="change_task(0)">First Task</td>
+					<td>10/10/2026</td>
+					<td class="done">DONE</td>
+					<td><a>Edit</a></td>
+					<td><a>Up</a></td>
+					<td><a>Down</a></td>
+				</tr>
+			</tbody>
+			</ol>
+	</div>
+
+</body>
+
+</html>

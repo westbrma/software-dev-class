@@ -2,31 +2,44 @@ window.onerror = (error) => {
 	alert(error);
 };
 
+// prettier-ignore
+let dead_guy = [
+'=====',
+ '|  |',
+ 'O  |',
+'/|\ |',
+'/ \ |',
+'====='
+]
+
 // values I want to keep track of:
 // lives, letters guessed, correct guesses, word, list of words
 
 let words = ['apples', 'oranges', 'pears', 'hello world'];
 let lives = 5;
-let correct_word = '';
+let current_word = '';
 let guesses = [];
 let game_over = false;
 
 // reusable function that return a random item from any list passed in
 function get_random_item(list) {
-	return list[Math.floor(Math.random() * list.length)];
+	let index = Math.floor(Math.random() * list.length);
+	return list[index];
 }
 
 function start_game() {
-	correct_word = get_random_item(words);
+	current_word = get_random_item(words);
 	lives = 5;
 	guesses = [];
 	game_over = false;
 	update_word_element();
 }
 
+function update_dead_guy() {}
+
 function update_word_element() {
 	let text = '';
-	for (let c of correct_word) {
+	for (let c of current_word) {
 		let is_correct = c == ' ' || guesses.includes(c);
 		if (is_correct) {
 			text = text + c;
@@ -62,8 +75,10 @@ function make_guess() {
 	let el_game_over = document.getElementById('game_over');
 
 	// check to see if the guess is a letter in the word
-	let is_correct = correct_word.includes(guess);
-	if (!is_correct) {
+	let is_correct = current_word.includes(guess);
+	if (is_correct) {
+		check_if_won();
+	} else {
 		lives = lives - 1;
 		el_lives.innerText = lives.toString();
 		if (lives == 0) {
@@ -73,7 +88,6 @@ function make_guess() {
 		}
 	}
 
-	check_if_won();
 	update_word_element();
 }
 
@@ -81,7 +95,7 @@ function check_if_won() {
 	let el_game_over = document.getElementById('game_over');
 	// check to see if they have won
 	let all_correct = true;
-	for (let c of correct_word) {
+	for (let c of current_word) {
 		if (c == ' ') continue;
 		if (!guesses.includes(c)) {
 			all_correct = false;
