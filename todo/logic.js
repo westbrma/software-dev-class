@@ -41,10 +41,22 @@ function render_table() {
 	el_tbody.innerHTML = row_html.join('\n');
 }
 
+function add_new_task() {
+	let new_task = {
+		name: '',
+		due_date: '10/10/2026',
+		status: 'Ready'
+	};
+	list.push(new_task);
+	edit_task(list.length - 1);
+}
+
 function edit_task(index) {
 	current_task = list[index];
 	el_taskbox.hidden = false;
-	document.getElementById('task_name').value = current_task.name;
+	let el_task_name = document.getElementById('task_name');
+	el_task_name.value = current_task.name;
+	el_task_name.focus();
 	document.getElementById('task_date').value = current_task.due_date;
 	document.getElementById('task_status').value = current_task.status;
 }
@@ -58,8 +70,10 @@ function close_task() {
 function delete_task() {
 	el_taskbox.hidden = true;
 	let idx = list.indexOf(current_task);
-	list.splice(idx, 1);
-	render_table();
+	if (idx >= 0) {
+		list.splice(idx, 1);
+		render_table();
+	}
 }
 
 render_table();
